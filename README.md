@@ -3,6 +3,8 @@
 How to implement a video-on-demand workflow on AWS leveraging AWS Step Functions, AWS Elemental MediaConvert, and AWS Elemental MediaPackage.
 Source code for [Video on Demand on AWS](https://aws.amazon.com/answers/media-entertainment/video-on-demand-on-aws/) solution.
 
+### In This Fork The Video Outputs Changed: *16x9 -> 9x16*
+
 ## On this Page
 - [Architecture Overview](#architecture-overview)
 - [Deployment](#deployment)
