@@ -100,7 +100,7 @@ const getFrameGroup = (event, outputPath) => ({
             RespondToAfd: 'NONE',
             TimecodeInsertion: 'DISABLED',
             Width: event.frameWidth,
-            ScalingBehavior: 'DEFAULT',
+            ScalingBehavior: 'STRETCH_TO_OUTPUT',
             AntiAlias: 'ENABLED',
             CodecSettings: {
                 FrameCaptureSettings: {
@@ -148,7 +148,7 @@ exports.handler = async (event) => {
                     AudioSelectors: {
                         'Audio Selector 1': {
                             Offset: 0,
-                            DefaultSelection: 'NOT_DEFAULT',
+                            DefaultSelection: 'DEFAULT',
                             ProgramSelection: 1,
                             SelectorType: 'TRACK',
                             Tracks: [
