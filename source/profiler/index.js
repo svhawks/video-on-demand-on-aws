@@ -41,7 +41,8 @@ exports.handler = async (event) => {
         event.srcWidth = mediaInfo.video[0].width;
 
         // Determine encoding by matching the srcHeight to the nearest profile.
-        const profiles = [2160, 1080, 720];
+        // const profiles = [2160, 1080,720];
+        const profiles = [3840, 1920,1280];
         let lastProfile;
         let encodeProfile;
 
