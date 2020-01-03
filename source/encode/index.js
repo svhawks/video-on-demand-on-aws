@@ -150,10 +150,7 @@ exports.handler = async (event) => {
                             Offset: 0,
                             DefaultSelection: 'DEFAULT',
                             ProgramSelection: 1,
-                            SelectorType: 'TRACK',
-                            Tracks: [
-                                1
-                            ]
+                            SelectorType: 'TRACK'
                         }
                     },
                     VideoSelector: {
