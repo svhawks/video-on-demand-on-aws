@@ -6,20 +6,6 @@
         "AdAvailOffset": 0,
         "OutputGroups": [
             {
-                "Name": "File Group",
-                "OutputGroupSettings": {
-                    "Type": "FILE_GROUP_SETTINGS",
-                    "FileGroupSettings": {}
-                },
-                "Outputs": [
-                    {
-                        "Preset": "System-Generic_Hd_Mp4_Avc_Aac_16x9_1280x720p_24Hz_4.5Mbps",
-                        "Extension": "mp4",
-                        "NameModifier": "_Generic_Hd_Mp4_Avc_Aac_16x9_1280x720p_24Hz_4.5Mbps"
-                    }
-                ]
-            },
-            {
                 "Name": "Apple HLS",
                 "Outputs": [
                     {
@@ -29,10 +15,6 @@
                     {
                         "Preset": "System-Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_5.0Mbps",
                         "NameModifier": "_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_5000Kbps"
-                    },
-                    {
-                        "Preset": "System-Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_6.5Mbps",
-                        "NameModifier": "_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_6500Kbps"
                     }
                 ],
                 "OutputGroupSettings": {
@@ -53,36 +35,6 @@
                         "ManifestCompression": "NONE",
                         "ClientCache": "ENABLED",
                         "StreamInfResolution": "INCLUDE"
-                    }
-                }
-            },
-            {
-                "Name": "DASH ISO",
-                "Outputs": [
-                    {
-                        "Preset": "System-Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_3.5Mbps",
-                        "NameModifier": "_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_3500Kbps"
-                    },
-                    {
-                        "Preset": "System-Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_5.0Mbps",
-                        "NameModifier": "_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_5000Kbps"
-                    },
-                    {
-                        "Preset": "System-Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_6.5Mbps",
-                        "NameModifier": "_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_6500Kbps"
-                    },
-                    {
-                        "Preset": "System-Ott_Dash_Mp4_Aac_He_96Kbps",
-                        "NameModifier": "_Ott_Dash_Mp4_Aac_He_96Kbps"
-                    }
-                ],
-                "OutputGroupSettings": {
-                    "Type": "DASH_ISO_GROUP_SETTINGS",
-                    "DashIsoGroupSettings": {
-                        "SegmentLength": 30,
-                        "FragmentLength": 3,
-                        "SegmentControl": "SEGMENTED_FILES",
-                        "HbbtvCompliance": "NONE"
                     }
                 }
             }

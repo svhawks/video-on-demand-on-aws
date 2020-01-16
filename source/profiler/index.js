@@ -42,7 +42,7 @@ exports.handler = async (event) => {
 
         // Determine encoding by matching the srcHeight to the nearest profile.
         // const profiles = [2160, 1080,720];
-        const profiles = [3840, 1920,1280];
+        const profiles = [1920,1280];
         let lastProfile;
         let encodeProfile;
 
@@ -61,7 +61,6 @@ exports.handler = async (event) => {
         if (event.frameCapture) {
             // Match Height x Width with the encoding profile.
             const ratios = {
-                '3840': 2160,
                 '1920': 1080,
                 '1280': 720
             };
@@ -75,7 +74,6 @@ exports.handler = async (event) => {
         if (!event.jobTemplate) {
             // Match the jobTemplate to the encoding Profile.
             const jobTemplates = {
-                '3840': event.jobTemplate_2160p,
                 '1920': event.jobTemplate_1080p,
                 '1280': event.jobTemplate_720p
             };

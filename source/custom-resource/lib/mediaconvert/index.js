@@ -15,38 +15,38 @@ const fs = require('fs');
 const AWS = require('aws-sdk');
 
 const CATEGORY = 'VOD';
-const DESCRIPTION = 'video on demand on aws';
+const DESCRIPTION = 'mobile HD vertical on demand';
 
 // Feature/so-vod-173 QVBR versions of the default system presets.
 const qvbrPresets = [
-    {
-        name: '_Mp4_Avc_Aac_16x9_1280x720p_24Hz_4.5Mbps_qvbr',
-        file: './lib/mediaconvert/presets/_Mp4_Avc_Aac_16x9_1280x720p_24Hz_4.5Mbps_qvbr.json'
-    },
-    {
-        name: '_Mp4_Avc_Aac_16x9_1920x1080p_24Hz_6Mbps_qvbr',
-        file: './lib/mediaconvert/presets/_Mp4_Avc_Aac_16x9_1920x1080p_24Hz_6Mbps_qvbr.json'
-    },
-    {
-        name: '_Mp4_Hevc_Aac_16x9_3840x2160p_24Hz_20Mbps_qvbr',
-        file: './lib/mediaconvert/presets/_Mp4_Hevc_Aac_16x9_3840x2160p_24Hz_20Mbps_qvbr.json'
-    },
-    {
-        name: '_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_6.5Mbps_qvbr',
-        file: './lib/mediaconvert/presets/_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_6.5Mbps_qvbr.json'
-    },
-    {
-        name: '_Ott_Dash_Mp4_Avc_16x9_1920x1080p_30Hz_8.5Mbps_qvbr',
-        file: './lib/mediaconvert/presets/_Ott_Dash_Mp4_Avc_16x9_1920x1080p_30Hz_8.5Mbps_qvbr.json'
-    },
-    {
-        name: '_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_3.5Mbps_qvbr',
-        file: './lib/mediaconvert/presets/_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_3.5Mbps_qvbr.json'
-    },
-    {
-        name: '_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_5.0Mbps_qvbr',
-        file: './lib/mediaconvert/presets/_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_5.0Mbps_qvbr.json'
-    },
+    // {
+    //     name: '_Mp4_Avc_Aac_16x9_1280x720p_24Hz_4.5Mbps_qvbr',
+    //     file: './lib/mediaconvert/presets/_Mp4_Avc_Aac_16x9_1280x720p_24Hz_4.5Mbps_qvbr.json'
+    // },
+    // {
+    //     name: '_Mp4_Avc_Aac_16x9_1920x1080p_24Hz_6Mbps_qvbr',
+    //     file: './lib/mediaconvert/presets/_Mp4_Avc_Aac_16x9_1920x1080p_24Hz_6Mbps_qvbr.json'
+    // },
+    // {
+    //     name: '_Mp4_Hevc_Aac_16x9_3840x2160p_24Hz_20Mbps_qvbr',
+    //     file: './lib/mediaconvert/presets/_Mp4_Hevc_Aac_16x9_3840x2160p_24Hz_20Mbps_qvbr.json'
+    // },
+    // {
+    //     name: '_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_6.5Mbps_qvbr',
+    //     file: './lib/mediaconvert/presets/_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_6.5Mbps_qvbr.json'
+    // },
+    // {
+    //     name: '_Ott_Dash_Mp4_Avc_16x9_1920x1080p_30Hz_8.5Mbps_qvbr',
+    //     file: './lib/mediaconvert/presets/_Ott_Dash_Mp4_Avc_16x9_1920x1080p_30Hz_8.5Mbps_qvbr.json'
+    // },
+    // {
+    //     name: '_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_3.5Mbps_qvbr',
+    //     file: './lib/mediaconvert/presets/_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_3.5Mbps_qvbr.json'
+    // },
+    // {
+    //     name: '_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_5.0Mbps_qvbr',
+    //     file: './lib/mediaconvert/presets/_Ott_Dash_Mp4_Avc_16x9_1280x720p_30Hz_5.0Mbps_qvbr.json'
+    // },
     {
         name: '_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_3.5Mbps_qvbr',
         file: './lib/mediaconvert/presets/_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_3.5Mbps_qvbr.json'
@@ -55,10 +55,10 @@ const qvbrPresets = [
         name: '_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_5.0Mbps_qvbr',
         file: './lib/mediaconvert/presets/_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_5.0Mbps_qvbr.json'
     },
-    {
-        name: '_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_6.5Mbps_qvbr',
-        file: './lib/mediaconvert/presets/_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_6.5Mbps_qvbr.json'
-    },
+    // {
+    //     name: '_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_6.5Mbps_qvbr',
+    //     file: './lib/mediaconvert/presets/_Ott_Hls_Ts_Avc_Aac_16x9_1280x720p_30Hz_6.5Mbps_qvbr.json'
+    // },
     {
         name: '_Ott_Hls_Ts_Avc_Aac_16x9_1920x1080p_30Hz_8.5Mbps_qvbr',
         file: './lib/mediaconvert/presets/_Ott_Hls_Ts_Avc_Aac_16x9_1920x1080p_30Hz_8.5Mbps_qvbr.json'
@@ -66,10 +66,6 @@ const qvbrPresets = [
 ];
 
 const qvbrTemplates = [
-    {
-        name: '_Ott_2160p_Avc_Aac_16x9_qvbr',
-        file: './lib/mediaconvert/templates/2160p_avc_aac_16x9_qvbr.json'
-    },
     {
         name: '_Ott_1080p_Avc_Aac_16x9_qvbr',
         file: './lib/mediaconvert/templates/1080p_avc_aac_16x9_qvbr.json'
@@ -81,10 +77,6 @@ const qvbrTemplates = [
 ];
 
 const mediaPackageTemplates = [
-    {
-        name: '_Ott_2160p_Avc_Aac_16x9_mvod',
-        file: './lib/mediaconvert/templates/2160p_avc_aac_16x9_mvod.json'
-    },
     {
         name: '_Ott_1080p_Avc_Aac_16x9_mvod',
         file: './lib/mediaconvert/templates/1080p_avc_aac_16x9_mvod.json'
